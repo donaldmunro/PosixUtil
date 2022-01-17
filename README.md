@@ -6,7 +6,9 @@ Used for executing child processes. Also supports async execution where the invo
 can continue executing while the executed rocess runs. Note when using this mode a shared_ptr
 to Process is required to ensure the child death handler can correctly handle cases where the
 original reference no longer exists. In the async case (particularly when using multiple threads)
- it is also recommended that the child handler is set before creating processes, for example 
+ it is also recommended that the child handler is set before creating processes (the handler
+ will automatically be set in async_execute if it has not yet been set).
+ For example 
 ~~~~
 posix_util::Process::set_child_death_handler();
 std::shared_ptr<posix_util::Process> ptester_process =
