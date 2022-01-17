@@ -1,7 +1,7 @@
 Posix Utility Classes
 ======================
 See unit test file test.cc for examples.
-#Process 
+# Process 
 Used for executing child processes. Also supports async execution where the invoking process
 can continue executing while the executed rocess runs. Note when using this mode a shared_ptr
 to Process is required to ensure the child death handler can correctly handle cases where the
@@ -16,8 +16,8 @@ std::shared_ptr<posix_util::Process> ptester_process =
 ptester_process->async_execute(args, ptester_process, true, false);               
 ~~~~
 
-#NamedSemaphore
+# NamedSemaphore
 Abstracts a named Posix semaphore.
 
-#TmpFile
+# TmpFile
 Abstracts temporary file creation
